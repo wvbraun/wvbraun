@@ -7,11 +7,11 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import { Router, browserHistory } from "react-router";
 import routes from "./routes";
-// import { loadTracks } from "./actions/clypActions";
+import { loadImages } from "./actions/glytchActions";
 import "./styles/styles.styl";
 
 const store = configureStore();
-// store.dispatch(loadTracks());
+store.dispatch(loadImages());
 
 render(
     <Provider store={store}>

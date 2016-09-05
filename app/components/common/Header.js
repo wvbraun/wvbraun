@@ -17,8 +17,8 @@ const Header = () => {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to="/glych">
-              <NavItem eventKey={1}>Glych</NavItem>
+            <LinkContainer to="/glytch">
+              <NavItem eventKey={1}>Glytch</NavItem>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
