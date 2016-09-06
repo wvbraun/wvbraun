@@ -2,10 +2,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:import/errors",
-    "plugin:import/extensions",
     "plugin:import/warnings"
   ],
   "plugins": [
+    "import",
     "react"
   ],
   "parserOptions": {
@@ -24,6 +24,7 @@
   },
   "rules": {
     "quotes": 0,
+    "import/extensions": 1,
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
