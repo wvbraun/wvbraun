@@ -1,5 +1,8 @@
 "use strict";
 
 export default {
-  images: []
+  glytch: {
+    images: [],
+    currentImage: 0
+  }
 };

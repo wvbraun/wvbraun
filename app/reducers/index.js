@@ -1,10 +1,10 @@
 "use strict";
 
 import { combineReducers } from "redux";
-import images from "./glytchReducer";
+import glytch from "./glytchReducer";
 
 const rootReducer = combineReducers({
-  images: images
+  glytch: glytch
 });
 
 export default rootReducer;

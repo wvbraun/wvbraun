@@ -3,17 +3,20 @@
 import initialState from "./initialState";
 import types from "../actions/actionTypes";
 
-export default function glytchReducer(state = initialState.images, action) {
+export default function glytchReducer(state = initialState.glytch, action) {
   switch (action.type) {
-
     case types.LOAD_IMAGES_SUCCESS:
-      return action.images;
+      return Object.assign({}, state, {
+        images: action.images
+      });
 
-    case types.UPLOD_IMAGE_SUCCESS:
-      return [
-        ...state,
-        Object.assign({}, action.image)
-      ];
+    case types.UPLOAD_IMAGE_SUCCESS:
+      return Object.assign({}, state,
+        { images: [
+          ...state.images,
+          Object.assign({}, action.image)
+          ]
+        });
 
 
 /*

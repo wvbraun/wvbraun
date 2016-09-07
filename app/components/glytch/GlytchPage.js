@@ -4,6 +4,7 @@ import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import GlytchHeader from "./GlytchHeader";
+import GlytchCanvas from "./GlytchCanvas";
 import * as glytchActions  from "../../actions/glytchActions";
 
 class GlytchPage extends React.Component {
@@ -16,6 +17,7 @@ class GlytchPage extends React.Component {
     return (
       <div className="row">
         <GlytchHeader />
+        <GlytchCanvas image={images[0]} />
       </div>
     );
   }
@@ -27,8 +29,9 @@ GlytchPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
+  const { glytch } = state;
   return {
-    images: state.images
+    images: glytch.images
   };
 }
 

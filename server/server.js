@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/', express.static(path.join(__dirname, '../public')));
 //routes(app);
 
 app.get("*", function(req, res) {
