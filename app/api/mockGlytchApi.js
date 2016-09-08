@@ -4,8 +4,8 @@ const delay = 1000;
 
 const images = [
   {
-    name: "nostalgia-drift",
-    url: "http://localhost:8080/img/nostalgia-drift.png"
+    name: "nostalgia-smeared",
+    url: "http://localhost:8080/img/nostalgia-smeared.jpg"
   }
 ];
 

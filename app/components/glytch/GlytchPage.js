@@ -17,7 +17,9 @@ class GlytchPage extends React.Component {
     return (
       <div className="row">
         <GlytchHeader />
-        <GlytchCanvas image={images[0]} />
+        {images.length > 0 &&
+          <GlytchCanvas image={images[0]} />
+        }
       </div>
     );
   }

@@ -5,7 +5,7 @@ import React, { PropTypes } from "react";
 
 const GlytchCanvas = ({ image }) => {
   return (
-    <div>
+    <div className="canvas-wrapper">
       <img src={image.url} alt={image.name} />
     </div>
   );
