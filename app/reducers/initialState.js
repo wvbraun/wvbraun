@@ -3,6 +3,6 @@
 export default {
   glytch: {
     images: [],
-    currentImage: 0
+    currentImage: null
   }
 };

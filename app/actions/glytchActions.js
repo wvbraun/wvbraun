@@ -20,11 +20,16 @@ export function uploadImageSuccess(image) {
   return { type: types.UPLOAD_IMAGE_SUCCESS, image };
 }
 
+export function selectImageSuccess(image) {
+  return { type: types.SELECT_IMAGE_SUCCESS, image };
+}
+
 export function loadImages() {
   return (dispatch) => {
     return GlytchApi.getAllImages()
-      .then((images) => {
-        dispatch(loadImagesSuccess(images));
+      .then((res) => {
+        dispatch(loadImagesSuccess(res.images));
+        dispatch(selectImageSuccess(res.image));
       })
       .catch((error) => {
         throw(error);
@@ -41,5 +46,11 @@ export function uploadImage(image) {
       .catch((error) => {
         throw(error);
       });
+  };
+}
+
+export function selectImage(image) {
+  return (dispatch) => {
+    dispatch(selectImageSuccess(image));
   };
 }

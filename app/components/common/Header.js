@@ -7,23 +7,21 @@ import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <div className="row">
-      <Navbar inverse staticTop>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <IndexLink to="/">wvbraun</IndexLink>
-          </Navbar.Brand>
-          <Navbar.Toggle/>
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to="/glytch">
-              <NavItem eventKey={1}>Glytch</NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <Navbar inverse staticTop>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <IndexLink to="/">wvbraun</IndexLink>
+        </Navbar.Brand>
+        <Navbar.Toggle/>
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <LinkContainer to="/glytch">
+            <NavItem eventKey={1}>Glytch</NavItem>
+          </LinkContainer>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 

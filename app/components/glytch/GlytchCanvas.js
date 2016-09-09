@@ -1,13 +1,11 @@
 "use strict";
 
 import React, { PropTypes } from "react";
-
+import { Image } from "react-bootstrap";
 
 const GlytchCanvas = ({ image }) => {
   return (
-    <div className="canvas-wrapper">
-      <img src={image.url} alt={image.name} />
-    </div>
+    <Image src={image.url} alt={image.name} rounded responsive />
   );
 };
 

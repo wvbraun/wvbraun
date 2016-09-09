@@ -6,6 +6,10 @@ const images = [
   {
     name: "nostalgia-smeared",
     url: "http://localhost:8080/img/nostalgia-smeared.jpg"
+  },
+  {
+    name: "bamboo",
+    url: "http://localhost:8080/img/bamboo.png"
   }
 ];
 
@@ -13,7 +17,12 @@ class MockGlytchApi {
   static getAllImages() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], images));
+        const _images = Object.assign([], images);
+        resolve(Object.assign({},
+          { images: _images,
+            image: _images[0]
+          })
+        );
       }, delay);
     });
   }

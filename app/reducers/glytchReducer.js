@@ -10,6 +10,11 @@ export default function glytchReducer(state = initialState.glytch, action) {
         images: action.images
       });
 
+    case types.SELECT_IMAGE_SUCCESS:
+      return Object.assign({}, state, {
+        currentImage: action.image
+      });
+
     case types.UPLOAD_IMAGE_SUCCESS:
       return Object.assign({}, state,
         { images: [

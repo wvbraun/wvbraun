@@ -4,22 +4,38 @@ import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import GlytchHeader from "./GlytchHeader";
-import GlytchCanvas from "./GlytchCanvas";
+import GlytchContainer from "./GlytchContainer";
 import * as glytchActions  from "../../actions/glytchActions";
 
 class GlytchPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+
+    this.selectImage = this.selectImage.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+  }
+
+  selectImage(event) {
+    event.preventDefault();
+    const image = {
+      name: event.target.alt,
+      url: event.target.src
+    };
+    this.props.actions.selectImage(image);
   }
 
   render() {
-    const { images } = this.props;
+    const { images, currentImage } = this.props;
     return (
-      <div className="row">
+      <div>
         <GlytchHeader />
-        {images.length > 0 &&
-          <GlytchCanvas image={images[0]} />
-        }
+        <GlytchContainer
+          images={images}
+          currentImage={currentImage}
+          onSelectImage={this.selectImage}
+        />
       </div>
     );
   }
@@ -27,13 +43,15 @@ class GlytchPage extends React.Component {
 
 GlytchPage.propTypes = {
   images: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  currentImage: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
   const { glytch } = state;
   return {
-    images: glytch.images
+    images: glytch.images,
+    currentImage: glytch.currentImage
   };
 }
 
