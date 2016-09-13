@@ -4,7 +4,7 @@ import React, { PropTypes } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import GlytchCanvas from "./GlytchCanvas";
 import GlytchImageListPanel from "./GlytchImageListPanel";
-import GlytchPropertiesPanel from "./GlytchPropertiesPanel";
+import GlytchEffectsPanel from "./GlytchEffectsPanel";
 
 
 const GlytchContainer = ({ images, currentImage, onSelectImage }) => {
@@ -25,9 +25,9 @@ const GlytchContainer = ({ images, currentImage, onSelectImage }) => {
             {currentImage && <GlytchCanvas image={currentImage}/>}
           </Col>
         </div>
-        <div className="glytch-properties">
+        <div className="glytch-effects">
           <Col xs={3}>
-            <GlytchPropertiesPanel />
+            <GlytchEffectsPanel />
           </Col>
         </div>
       </Row>
