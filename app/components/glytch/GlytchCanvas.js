@@ -1,11 +1,16 @@
 "use strict";
 
 import React, { PropTypes } from "react";
+import { Surface } from "gl-react-dom";
 import { Image } from "react-bootstrap";
+import GlytchEffects from "./GlytchEffects";
 
+    //<Image src={image.url} alt={image.name} rounded responsive />
 const GlytchCanvas = ({ image }) => {
   return (
-    <Image src={image.url} alt={image.name} rounded responsive />
+    <Surface width={500} height={500} >
+      <GlytchEffects />
+    </Surface>
   );
 };
 

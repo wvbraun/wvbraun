@@ -27,6 +27,8 @@
     "express": "^4.14.0",
     "font-awesome": "^4.6.3",
     "font-awesome-stylus": "^4.6.2",
+    "gl-react": "^2.2.6",
+    "gl-react-dom": "^2.2.3",
     "keymirror": "^0.1.1",
     "lodash": "^4.15.0",
     "react": "^15.3.1",

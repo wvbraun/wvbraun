@@ -10,20 +10,6 @@ import * as glytchActions  from "../../actions/glytchActions";
 class GlytchPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
-    this.selectImage = this.selectImage.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-  }
-
-  selectImage(event) {
-    event.preventDefault();
-    const image = {
-      name: event.target.alt,
-      url: event.target.src
-    };
-    this.props.actions.selectImage(image);
   }
 
   render() {
@@ -34,7 +20,6 @@ class GlytchPage extends React.Component {
         <GlytchContainer
           images={images}
           currentImage={currentImage}
-          onSelectImage={this.selectImage}
         />
       </div>
     );
